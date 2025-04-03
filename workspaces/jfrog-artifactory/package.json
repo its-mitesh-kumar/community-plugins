@@ -6,6 +6,7 @@
     "node": "20 || 22"
   },
   "scripts": {
+    "dev": "yarn workspaces foreach -A --include backend --include app --parallel -v -i run start",
     "tsc": "tsc",
     "tsc:full": "tsc --skipLibCheck true --incremental false",
     "build:all": "backstage-cli repo build --all",
@@ -19,7 +20,10 @@
     "lint:all": "backstage-cli repo lint",
     "prettier:check": "prettier --check .",
     "new": "backstage-cli new --scope @backstage-community",
-    "postinstall": "cd ../../ && yarn install"
+    "postinstall": "cd ../../ && yarn install",
+    "lint:check": "backstage-cli package lint",
+    "lint:fix": "backstage-cli package lint --fix",
+    "prettier:fix": "prettier --write ."
   },
   "workspaces": {
     "packages": [
