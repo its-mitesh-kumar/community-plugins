@@ -9,6 +9,21 @@
     "main": "dist/index.esm.js",
     "types": "dist/index.d.ts"
   },
+  "exports": {
+    ".": "./src/index.ts",
+    "./alpha": "./src/alpha.tsx",
+    "./package.json": "./package.json"
+  },
+  "typesVersions": {
+    "*": {
+      "alpha": [
+        "src/alpha.tsx"
+      ],
+      "package.json": [
+        "package.json"
+      ]
+    }
+  },
   "backstage": {
     "role": "frontend-plugin",
     "supported-versions": "1.32.2",
@@ -31,8 +46,10 @@
   },
   "dependencies": {
     "@backstage/catalog-model": "^1.7.3",
+    "@backstage/core-compat-api": "^0.4.2",
     "@backstage/core-components": "^0.17.1",
     "@backstage/core-plugin-api": "^1.10.6",
+    "@backstage/frontend-plugin-api": "^0.10.2",
     "@backstage/plugin-catalog-react": "^1.17.0",
     "@backstage/theme": "^0.6.5",
     "@janus-idp/shared-react": "^2.16.0",
