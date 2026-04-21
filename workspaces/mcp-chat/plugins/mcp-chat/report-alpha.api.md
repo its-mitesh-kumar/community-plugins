@@ -47,8 +47,12 @@ const mcpChatPlugin: OverridableFrontendPlugin<
     'nav-item:mcp-chat': OverridableExtensionDefinition<{
       kind: 'nav-item';
       name: undefined;
-      config: {};
-      configInput: {};
+      config: {
+        title: string | undefined;
+      };
+      configInput: {
+        title?: string | undefined;
+      };
       output: ExtensionDataRef<
         {
           title: string;
@@ -73,8 +77,8 @@ const mcpChatPlugin: OverridableFrontendPlugin<
         title: string | undefined;
       };
       configInput: {
-        title?: string | undefined;
         path?: string | undefined;
+        title?: string | undefined;
       };
       output:
         | ExtensionDataRef<JSX_2.Element, 'core.reactElement', {}>
@@ -133,7 +137,6 @@ const mcpChatPlugin: OverridableFrontendPlugin<
         >;
       };
       params: {
-        defaultPath?: [Error: "Use the 'path' param instead"] | undefined;
         path: string;
         title?: string | undefined;
         icon?: IconElement | undefined;
